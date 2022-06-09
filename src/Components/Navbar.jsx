@@ -9,15 +9,16 @@ const Navbar = () => {
     const { light, setLigth } = useContext(context)
     return (
         <>
-            <div className="navbar bg-base-100 shadow-sm">
+            <div className="navbar bg-base-100 shadow-sm fixed top=0 left-0 z-50">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabindex="0" className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
                         <ul tabindex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                            <li><a>Item 1</a></li>
-                            <li ><a>Item 3</a></li>
+                            <li><Link to='/'>Home</Link></li>
+                            <li><a as href='/#projects'>My Projects</a></li>
+                            <li><a href='/#contact'>Contact Me</a></li>
                             <li><div onClick={() => saveAs(resume, "OmarFaruk's resume")} className="btn btn-primary">download resume</div></li>
                         </ul>
                     </div>
@@ -25,11 +26,9 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex navbar-end">
                     <ul className="menu menu-horizontal p-0 ">
-                        <li></li>
-                        <li><NavLink to='/'>Home</NavLink></li>
-                        <li><NavLink to='/projects'></NavLink></li>
-                        <li><NavLink to='/aboutme'>Item 3</NavLink></li>
-                        <li></li>
+                        <li><Link to='/'>Home</Link></li>
+                        <li><a as href='/#projects'>My Projects</a></li>
+                        <li><a href='/#contact'>Contact Me</a></li>
                     </ul>
                 </div>
                 <div className="navbar-end">

@@ -9,10 +9,11 @@ function App() {
   const [light, setLigth] = useState(false)
   return (
     <context.Provider value={{light, setLigth}}>
-      <div data-theme={light? 'light': 'dark'} className='h-screen w-full'>
+      <div data-theme={light? 'light': 'dark'}>
       <Navbar/>
       <Routes>
         <Route path='/' element={<Home/>} />
+        <Route path='/home' element={<Home/>} />
       </Routes>
     </div>
     </context.Provider>
